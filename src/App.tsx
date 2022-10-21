@@ -1,9 +1,12 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-const App = () => (
-  <div className="App">
-    <h1>Challenge - Coderockr</h1>
-  </div>
-);
+import Routes from './routes';
 
-export default App;
+export default function App() {
+  return (
+    <Router>
+      <Routes />
+    </Router>
+  );
+}
