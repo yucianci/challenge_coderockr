@@ -8,6 +8,11 @@ export type InterfacePost = {
   imageUrl: string;
 };
 
-export type InterfacePostSize = {
+export type InterfacePostStyle = {
   size: 'large' | 'small';
+  side: 'left' | 'right'
+};
+
+export type InterfaceContainer = {
+  side: 'left' | 'right'
 };

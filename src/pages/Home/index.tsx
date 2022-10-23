@@ -10,13 +10,15 @@ const Home = () => {
   const [page, setPage] = useState<number>(1);
   const [loading, setLoading] = useState<boolean>(false);
 
+  let postSideIsLeft = true;
+
   useEffect(() => {
     setLoading(true);
     axios
       .get('https://stormy-shelf-93141.herokuapp.com/articles', {
         params: {
           _page: page,
-          _limit: 3,
+          _limit: 6,
         },
       })
       .then((response) => {
@@ -45,7 +47,6 @@ const Home = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
   return (
     <>
       {loading && <Loader />}
@@ -57,9 +58,14 @@ const Home = () => {
         </Menu>
       </Header>
       <Main>
-        {posts.map((post: InterfacePost, index: number) => (
-          <Post key={post.id} index={index} post={post} />
-        ))}
+        {posts.map((post: InterfacePost, index: number) => {
+          if (index % 3 === 0) {
+            postSideIsLeft = !postSideIsLeft;
+          }
+          return (
+            <Post key={post.id} postSideIsLeft={postSideIsLeft} index={index} post={post} />
+          );
+        })}
       </Main>
     </>
   );

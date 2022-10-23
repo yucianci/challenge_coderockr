@@ -5,24 +5,26 @@ import {
   Container, Wrapper, LargeWrapper,
 } from './styles';
 
-const Post = (props: { post: InterfacePost; index: number }) => {
-  const { post, index } = props;
+const Post = (props: { post: InterfacePost; index: number; postSideIsLeft: boolean}) => {
+  const { post, index, postSideIsLeft } = props;
 
   const indexPost = (index + 1) % 3 === 0;
 
   const POST_SIZE = indexPost ? 'large' : 'small';
 
+  const POST_SIDE = postSideIsLeft ? 'left' : 'right';
+
   return (
     <>
       {POST_SIZE === 'large' ? (
-        <LargeWrapper>
+        <LargeWrapper side={POST_SIDE}>
           <Container>
-            <Content post={post} size={POST_SIZE} />
+            <Content post={post} size={POST_SIZE} side={POST_SIDE} />
           </Container>
         </LargeWrapper>
       ) : (
         <Wrapper>
-          <Content post={post} size={POST_SIZE} />
+          <Content post={post} size={POST_SIZE} side={POST_SIDE} />
         </Wrapper>
       )}
     </>

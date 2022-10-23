@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
-import { InterfacePostSize } from '../interface';
+import { InterfacePostStyle } from '../interface';
 
-export const Box = styled.div<InterfacePostSize>`
+export const Box = styled.div<InterfacePostStyle>`
   display: flex;
   width: 100%;
   height: 320px;
@@ -24,9 +24,15 @@ export const Box = styled.div<InterfacePostSize>`
         height: 100%;
       }
     `}
+
+    ${(props) => props.side === 'left' && props.size === 'small'
+    && css`
+      flex-direction: row-reverse;
+    `}
 `;
 
-export const Article = styled.article<InterfacePostSize>`
+export const Article = styled.article<InterfacePostStyle>`
+  position: relative;
   padding: 35px 80px;
   overflow-y: auto;
 
@@ -38,5 +44,19 @@ export const Article = styled.article<InterfacePostSize>`
 
   p {
     font-size: 24px;
+  }
+
+  img.icon {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    bottom: 35px;
+    right: 26px;
+
+    ${(props) => props.side === 'left'
+    && css`
+      bottom: 35px;
+      left: 578px;
+    `}
   }
 `;

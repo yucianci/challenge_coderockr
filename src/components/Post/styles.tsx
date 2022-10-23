@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { InterfaceContainer } from './interface';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -7,10 +8,15 @@ export const Wrapper = styled.div`
   width: 50%;
 `;
 
-export const LargeWrapper = styled.div`
+export const LargeWrapper = styled.div<InterfaceContainer>`
   width: 100%;
   display: flex;
   justify-content: end;
+
+  ${(props) => props.side === 'left'
+    && css`
+      justify-content: start;
+    `}
 `;
 
 export const Container = styled.section`

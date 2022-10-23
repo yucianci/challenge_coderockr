@@ -1,8 +1,13 @@
 import React from 'react';
 import { InterfacePost } from '../interface';
 import { Article, Box } from './styles';
+import icon from '../../../assets/svg/Vector.svg';
 
-const Content = (props: { post: InterfacePost; size: 'large' | 'small' }) => {
+const Content = (props: {
+  post: InterfacePost;
+  size: 'large' | 'small';
+  side: 'left' | 'right';
+}) => {
   const {
     imageUrl, author, title, article,
   } = props.post;
@@ -18,13 +23,13 @@ const Content = (props: { post: InterfacePost; size: 'large' | 'small' }) => {
   const simpleTitle = title.split('.', 1);
 
   return (
-    <Box size={props.size}>
+    <Box size={props.size} side={props.side}>
       <img
         src={imageUrl}
         alt={`Image for ${author} ` || 'Image for anonymous author'}
         loading="lazy"
       />
-      <Article size={props.size}>
+      <Article size={props.size} side={props.side}>
         <p>{author}</p>
         <h2>{simpleTitle}</h2>
         <p>
@@ -32,7 +37,10 @@ const Content = (props: { post: InterfacePost; size: 'large' | 'small' }) => {
             ? `${simpleArticle}.`
             : `${simpleArticle[2]}.`}
         </p>
+
+        <img className="icon" src={icon} alt="More details" />
       </Article>
+
     </Box>
   );
 };
