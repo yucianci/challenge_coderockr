@@ -1,8 +1,8 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import Post from "../../components/Post";
-import { InterfacePost } from "../../components/Post/interface";
-import { Header, Menu, Main } from "./styles";
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import Post from '../../components/Post';
+import { InterfacePost } from '../../components/Post/interface';
+import { Header, Menu, Main } from './styles';
 
 const Home = () => {
   const [posts, setPosts] = useState<any>([]);
@@ -10,7 +10,7 @@ const Home = () => {
 
   useEffect(() => {
     axios
-      .get("https://stormy-shelf-93141.herokuapp.com/articles", {
+      .get('https://stormy-shelf-93141.herokuapp.com/articles', {
         params: {
           _page: page,
           _limit: 3,
@@ -29,8 +29,7 @@ const Home = () => {
     const documentScrollTop = document.documentElement.scrollTop;
     const documentScrollHeight = document.documentElement.scrollHeight;
 
-    const isBottomPage =
-      windowInnerHeight + documentScrollTop === documentScrollHeight;
+    const isBottomPage = windowInnerHeight + documentScrollTop === documentScrollHeight;
 
     if (isBottomPage) {
       setPage((previousPage) => previousPage + 1);
@@ -38,7 +37,7 @@ const Home = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
   }, []);
 
   return (
