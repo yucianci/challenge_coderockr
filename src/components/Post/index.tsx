@@ -2,7 +2,7 @@ import React from 'react';
 import Content from './Content';
 import { InterfacePost } from './interface';
 import {
-  Container, LargeContainer, Wrapper, LargeWrapper,
+  Container, Wrapper, LargeWrapper,
 } from './styles';
 
 const Post = (props: { post: InterfacePost; index: number }) => {
@@ -16,15 +16,13 @@ const Post = (props: { post: InterfacePost; index: number }) => {
     <>
       {POST_SIZE === 'large' ? (
         <LargeWrapper>
-          <LargeContainer>
-            <Content post={post} size={POST_SIZE} />
-          </LargeContainer>
-        </LargeWrapper>
-      ) : (
-        <Wrapper>
           <Container>
             <Content post={post} size={POST_SIZE} />
           </Container>
+        </LargeWrapper>
+      ) : (
+        <Wrapper>
+          <Content post={post} size={POST_SIZE} />
         </Wrapper>
       )}
     </>

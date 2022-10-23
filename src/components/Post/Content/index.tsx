@@ -22,6 +22,7 @@ const Content = (props: { post: InterfacePost; size: 'large' | 'small' }) => {
       <img
         src={imageUrl}
         alt={`Image for ${author} ` || 'Image for anonymous author'}
+        loading="lazy"
       />
       <Article size={props.size}>
         <p>{author}</p>
@@ -29,7 +30,7 @@ const Content = (props: { post: InterfacePost; size: 'large' | 'small' }) => {
         <p>
           {props.size === 'large'
             ? `${simpleArticle}.`
-            : `${simpleArticle[0]}.`}
+            : `${simpleArticle[2]}.`}
         </p>
       </Article>
     </Box>
