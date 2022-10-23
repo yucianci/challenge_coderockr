@@ -28,6 +28,7 @@ export const Box = styled.div<InterfacePostSize>`
 
 export const Article = styled.article<InterfacePostSize>`
   padding: 35px 80px;
+  overflow-y: auto;
 
   h2 {
     color: #f1a10a;

@@ -39,4 +39,21 @@ export default createGlobalStyle`
   button {
     cursor: pointer;
   }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 12px;
+  }
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 2px 2px 2px #d1d8e092;
+    background: #fff;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #4d4d4d60;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4d4d4d71;
+  }
 `;
