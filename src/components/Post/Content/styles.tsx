@@ -1,5 +1,5 @@
-import styled, { css } from "styled-components";
-import { InterfacePostSize } from "../interface";
+import styled, { css } from 'styled-components';
+import { InterfacePostSize } from '../interface';
 
 export const Box = styled.div<InterfacePostSize>`
   display: flex;
@@ -12,9 +12,8 @@ export const Box = styled.div<InterfacePostSize>`
     height: 100%;
   }
 
-  ${(props) =>
-    props.size === "large" &&
-    css`
+  ${(props) => props.size === 'large'
+    && css`
       display: flex;
       align-items: center;
       width: 100%;
@@ -33,8 +32,7 @@ export const Article = styled.article<InterfacePostSize>`
   h2 {
     color: #f1a10a;
     font-size: 36px;
-    margin: ${(props) =>
-      props.size === "large" ? "24px  0 15px" : "7px  0 13px"};
+    margin: ${(props) => (props.size === 'large' ? '24px  0 15px' : '7px  0 13px')};
   }
 
   p {

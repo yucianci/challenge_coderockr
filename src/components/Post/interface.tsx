@@ -9,5 +9,5 @@ export type InterfacePost = {
 };
 
 export type InterfacePostSize = {
-  size: "large" | "small";
+  size: 'large' | 'small';
 };

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   width: 50%;
@@ -25,4 +25,3 @@ export const LargeContainer = styled.div`
   margin: 80px 0;
   width: 65%;
 `;
-
