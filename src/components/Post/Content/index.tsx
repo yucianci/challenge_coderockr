@@ -1,15 +1,17 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { InterfacePost } from '../interface';
-import { Article, Box, Wrapper } from './styles';
-import icon from '../../../assets/svg/Vector.svg';
+import { Article, Box, Wrapper } from './styles'; import icon from '../../../assets/svg/Vector.svg';
 
 const Content = (props: {
   post: InterfacePost;
   size: 'large' | 'small';
   side: 'left' | 'right';
 }) => {
+  const navigate = useNavigate();
+
   const {
-    imageUrl, author, title, article,
+    id, imageUrl, author, title, article,
   } = props.post;
 
   /*
@@ -23,7 +25,7 @@ const Content = (props: {
   const simpleTitle = title.split('.', 1);
 
   return (
-    <Box size={props.size} side={props.side}>
+    <Box size={props.size} side={props.side} onClick={() => navigate(`/article/${id}`)}>
       <img
         src={imageUrl}
         alt={`Image for ${author} ` || 'Image for anonymous author'}
