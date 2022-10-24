@@ -1,10 +1,10 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Header from '../../components/Header';
 import Loader from '../../components/Loader';
 import { InterfacePost } from '../../components/Post/interface';
 import { postDefault } from '../../data';
+import { formatDate } from '../../utils/formatDate';
 import {
   ContentArticle,
   HeaderArticle,
@@ -32,17 +32,15 @@ const Article = () => {
         }
       })
       .catch((err) => err)
-      .finally(() => setLoading(false));
+      .finally(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+        setLoading(false);
+      });
   }, []);
-
-  const doc = new DOMParser().parseFromString(post.article, 'text/html');
-
-  console.log(doc);
 
   return (
     <>
       {loading && <Loader />}
-      <Header />
       <Wrapper>
         <Main>
           <HeaderArticle>
@@ -52,14 +50,14 @@ const Article = () => {
               loading="lazy"
             />
             <div>
-              <span>Jan 6, 2018</span>
+              <span>{formatDate(post.date)}</span>
               <p>{post.author}</p>
               <h2>{post.title}</h2>
             </div>
           </HeaderArticle>
           <HeaderArticleMobile imageUrl={post.imageUrl}>
             <div>
-              <span>Jan 6, 2018</span>
+              <span>{formatDate(post.date)}</span>
               <p>{post.author}</p>
               <h2>{post.title}</h2>
             </div>

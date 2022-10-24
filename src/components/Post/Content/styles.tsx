@@ -5,7 +5,7 @@ export const Box = styled.div<InterfacePostStyle>`
   position: relative;
   display: flex;
   width: 100%;
-  height: 320px;
+  height: 400px;
   cursor: pointer;
 
   img {
@@ -69,11 +69,11 @@ export const Wrapper = styled.article<InterfacePostStyle>`
   h2 {
     color: #f1a10a;
     font-size: 36px;
-    margin: ${(props) => (props.size === 'large' ? '24px  0 15px' : '7px  0 13px')};
   }
 
   p {
     font-size: 24px;
+    margin: ${(props) => (props.size === 'large' ? '24px  0 15px' : '7px  0 13px')};
   }
 
   img.icon {
