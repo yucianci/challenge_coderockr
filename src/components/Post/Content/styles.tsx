@@ -120,4 +120,7 @@ export const Wrapper = styled.article<InterfacePostStyle>`
 export const Article = styled.div`
   height: 100%;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;

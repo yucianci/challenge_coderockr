@@ -1,9 +1,10 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import Header from '../../components/Header';
 import Loader from '../../components/Loader';
 import Post from '../../components/Post';
 import { InterfacePost } from '../../components/Post/interface';
-import { Header, Menu, Main } from './styles';
+import { Main } from './styles';
 
 const Home = () => {
   const [posts, setPosts] = useState<any>([]);
@@ -47,16 +48,11 @@ const Home = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
   return (
     <>
       {loading && <Loader />}
-      <Header title="Rockr Blog">
-        <h1>Rockr Blog</h1>
-        <Menu>
-          <a href="/">Posts</a>
-          <a href="/">Contact</a>
-        </Menu>
-      </Header>
+      <Header />
       <Main>
         {posts.map((post: InterfacePost, index: number) => {
           if (index % 3 === 0) {
