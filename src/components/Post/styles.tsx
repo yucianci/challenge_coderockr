@@ -6,6 +6,26 @@ export const Wrapper = styled.div`
   background: #fff;
   color: #1a1a1a;
   width: 50%;
+
+  @media (max-width: 1400px) {
+    width: 100%;
+    margin: 32px 10%;
+  }
+
+  @media (max-width: 1200px) {
+    width: 100%;
+    margin: 32px 5%;
+  }
+
+  @media (max-width: 1000px) {
+    width: 100%;
+    margin: 32px 0;
+  }
+
+  @media (max-width: 800px) {
+    width: 100%;
+    margin: 24px 0;
+  }
 `;
 
 export const LargeWrapper = styled.div<InterfaceContainer>`
@@ -26,4 +46,20 @@ export const Container = styled.section`
   justify-content: end;
   margin: 80px 0;
   width: 65%;
+
+  @media (max-width: 1400px) {
+    width: 75%;
+  }
+
+  @media (max-width: 1200px) {
+    width: 85%;
+  }
+
+  @media (max-width: 1000px) {
+    width: 100%;
+  }
+
+  @media (max-width: 800px) {
+    margin: 24px 0;
+  }
 `;

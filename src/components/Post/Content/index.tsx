@@ -1,6 +1,6 @@
 import React from 'react';
 import { InterfacePost } from '../interface';
-import { Article, Box } from './styles';
+import { Article, Box, Wrapper } from './styles';
 import icon from '../../../assets/svg/Vector.svg';
 
 const Content = (props: {
@@ -29,17 +29,18 @@ const Content = (props: {
         alt={`Image for ${author} ` || 'Image for anonymous author'}
         loading="lazy"
       />
-      <Article size={props.size} side={props.side}>
-        <p>{author}</p>
-        <h2>{simpleTitle}</h2>
-        <p>
-          {props.size === 'large'
-            ? `${simpleArticle}.`
-            : `${simpleArticle[2]}.`}
-        </p>
-
+      <Wrapper size={props.size} side={props.side}>
+        <Article>
+          <p>{author}</p>
+          <h2>{simpleTitle}</h2>
+          <p>
+            {props.size === 'large'
+              ? `${simpleArticle}.`
+              : `${simpleArticle[2]}.`}
+          </p>
+        </Article>
         <img className="icon" src={icon} alt="More details" />
-      </Article>
+      </Wrapper>
     </Box>
   );
 };
