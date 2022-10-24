@@ -25,7 +25,8 @@ export const Box = styled.div<InterfacePostStyle>`
       }
     `}
 
-    ${(props) => props.side === 'left' && props.size === 'small'
+  ${(props) => props.side === 'left'
+    && props.size === 'small'
     && css`
       flex-direction: row-reverse;
     `}
@@ -54,9 +55,9 @@ export const Article = styled.article<InterfacePostStyle>`
     right: 26px;
 
     ${(props) => props.side === 'left'
-    && css`
-      bottom: 35px;
-      left: 578px;
-    `}
+      && css`
+        bottom: 35px;
+        left: 578px;
+      `}
   }
 `;

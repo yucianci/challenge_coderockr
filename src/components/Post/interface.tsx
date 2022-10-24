@@ -10,9 +10,9 @@ export type InterfacePost = {
 
 export type InterfacePostStyle = {
   size: 'large' | 'small';
-  side: 'left' | 'right'
+  side: 'left' | 'right';
 };
 
 export type InterfaceContainer = {
-  side: 'left' | 'right'
+  side: 'left' | 'right';
 };

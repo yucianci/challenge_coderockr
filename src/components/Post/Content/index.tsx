@@ -40,7 +40,6 @@ const Content = (props: {
 
         <img className="icon" src={icon} alt="More details" />
       </Article>
-
     </Box>
   );
 };
