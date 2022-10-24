@@ -89,11 +89,11 @@ export const Roller = styled.div`
     }
   }
   @keyframes roller {
-  0% {
-    transform: rotate(0deg);
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 `;

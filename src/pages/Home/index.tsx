@@ -63,7 +63,12 @@ const Home = () => {
             postSideIsLeft = !postSideIsLeft;
           }
           return (
-            <Post key={post.id} postSideIsLeft={postSideIsLeft} index={index} post={post} />
+            <Post
+              key={post.id}
+              postSideIsLeft={postSideIsLeft}
+              index={index}
+              post={post}
+            />
           );
         })}
       </Main>
