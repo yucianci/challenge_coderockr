@@ -25,13 +25,7 @@
   <li type="circle">Eslint/Prettier - Used for code pattern</li>
 </ul>
 
-## Getting Started:
-
-```bash
-$ yarn build
- or
-$ npm run build
-```
+# Getting Started:
 
 ## Install dependencies:
 
@@ -39,6 +33,14 @@ $ npm run build
 $ yarn
  or
 $ npm i
+```
+
+## Build application:
+
+```bash
+$ yarn build
+ or
+$ npm run build
 ```
 
 ## Start application:
