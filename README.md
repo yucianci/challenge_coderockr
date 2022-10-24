@@ -16,7 +16,7 @@
 
 <ul> 
   <li type="circle">Vite - Used for testing this technology</li>
-  <li type="circle">React JS - Used it because i have more affinity with this Library</li>
+  <li type="circle">React JS - Used it because i have more affinity with this library</li>
   <li type="circle">React-icons - Used for manage icons in all project</li>
   <li type="circle">TypeScript - Used for manage type in all project</li>
   <li type="circle">Styled-components - Used for manage styles in all project</li>
