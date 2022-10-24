@@ -4,7 +4,7 @@ export type InterfacePost = {
   authorEmail?: string;
   title: string;
   article: string;
-  date?: string;
+  date: string;
   imageUrl: string;
 };
 

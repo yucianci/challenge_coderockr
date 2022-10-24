@@ -6,6 +6,6 @@ export const postDefault: InterfacePost = {
   authorEmail: '' || undefined,
   title: '',
   article: '',
-  date: '' || undefined,
+  date: '',
   imageUrl: '',
 };

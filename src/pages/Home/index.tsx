@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import Header from '../../components/Header';
 import Loader from '../../components/Loader';
 import Post from '../../components/Post';
 import { InterfacePost } from '../../components/Post/interface';
@@ -23,9 +22,7 @@ const Home = () => {
         },
       })
       .then((response) => {
-        if (response.data.length > 0) {
-          setPosts(() => [...posts, ...response.data]);
-        }
+        setPosts(() => [...posts, ...response.data]);
       })
       .catch((err) => err)
       .finally(() => setLoading(false));
@@ -36,7 +33,7 @@ const Home = () => {
     const documentScrollTop = document.documentElement.scrollTop;
     const documentScrollHeight = document.documentElement.scrollHeight;
 
-    const isBottomPage = windowInnerHeight + documentScrollTop === documentScrollHeight;
+    const isBottomPage = (windowInnerHeight + documentScrollTop) + 1 > documentScrollHeight;
 
     if (isBottomPage) {
       setLoading(true);
@@ -52,7 +49,6 @@ const Home = () => {
   return (
     <>
       {loading && <Loader />}
-      <Header />
       <Main>
         {posts.map((post: InterfacePost, index: number) => {
           if (index % 3 === 0) {
@@ -60,7 +56,7 @@ const Home = () => {
           }
           return (
             <Post
-              key={post.id}
+              key={`${post.id}-${index}`}
               postSideIsLeft={postSideIsLeft}
               index={index}
               post={post}
