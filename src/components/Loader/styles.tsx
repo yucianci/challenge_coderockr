@@ -4,6 +4,7 @@ export const FullPage = styled.div`
   position: fixed;
   z-index: 1000;
   display: flex;
+  top: 0;
   justify-content: center;
   align-items: center;
   height: 100vh;
