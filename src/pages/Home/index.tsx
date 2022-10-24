@@ -33,7 +33,7 @@ const Home = () => {
     const documentScrollTop = document.documentElement.scrollTop;
     const documentScrollHeight = document.documentElement.scrollHeight;
 
-    const isBottomPage = (windowInnerHeight + documentScrollTop) + 1 > documentScrollHeight;
+    const isBottomPage = windowInnerHeight + documentScrollTop + 1 > documentScrollHeight;
 
     if (isBottomPage) {
       setLoading(true);
