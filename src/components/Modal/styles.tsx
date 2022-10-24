@@ -26,6 +26,14 @@ export const Main = styled.div`
     font-size: 24px;
     right: 5%;
   }
+
+  @media (max-width: 1000px) {
+    width: 60%;
+  }
+
+  @media (max-width: 700px) {
+    width: 80%;
+  }
 `;
 
 export const Title = styled.p`
